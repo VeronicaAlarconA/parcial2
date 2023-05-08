@@ -18,11 +18,11 @@ class SalesController extends Controller
     public function create()
     {
         $sale = new Sale();
-        $sale->nombre_empleado = $request->namev;
-        $sale->nombre_cliente = $request->namev;
-        $sale->nombre_producto = $request->namep;
-        $sale->precio = $request->price;
-        $sale->fecha_compra = $request->date;
+        $sale->nombre_empleado = $request->nombre_empleado;
+        $sale->nombre_cliente = $request->nombre_cliente;
+        $sale->nombre_producto = $request->nombre_producto;
+        $sale->precio = $request->precio;
+        $sale->fecha_compra = $request->fecha_compra;
         $sale->save();
         return redirect()->route('sales.index');
     
@@ -47,11 +47,11 @@ class SalesController extends Controller
     public function update()
     {
         $sale = Sale::find($id);
-        $sale->nombre_empleado = $request->namev;
-        $sale->nombre_cliente = $request->namev;
-        $sale->nombre_producto = $request->namep;
-        $sale->precio = $request->price;
-        $sale->fecha_compra = $request->date;
+        $sale->nombre_empleado = $request->nombre_empleado;
+        $sale->nombre_cliente = $request->nombre_cliente;
+        $sale->nombre_producto = $request->nombre_producto;
+        $sale->precio = $request->precio;
+        $sale->fecha_compra = $request->fecha_compra;
         $sale->save();
         return redirect()->route('sales.index');
 
@@ -59,7 +59,9 @@ class SalesController extends Controller
 
     public function destroy($id)
     {
-
+        $sale = Sale::find($id);
+        $sale->delete();
+        return redirect()->route('sales.index');
     }
 
 }
