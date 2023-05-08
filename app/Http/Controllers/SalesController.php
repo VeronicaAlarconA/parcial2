@@ -53,6 +53,7 @@ class SalesController extends Controller
         $sale->precio = $request->precio;
         $sale->fecha_compra = $request->fecha_compra;
         $sale->save();
+        
         return redirect()->route('sales.index');
 
     }
