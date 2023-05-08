@@ -51,9 +51,10 @@ class SalesController extends Controller
         $sale->nombre_cliente = $request->nombre_cliente;
         $sale->nombre_producto = $request->nombre_producto;
         $sale->precio = $request->precio;
+        
         $sale->fecha_compra = $request->fecha_compra;
         $sale->save();
-        
+
         return redirect()->route('sales.index');
 
     }
